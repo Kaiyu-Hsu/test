@@ -1,7 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <!-- app color="primary" dark -->
+    <v-app-bar app color="blue" elevation="4">
       <div class="d-flex align-center">
+        <v-btn color="primary"> <v-icon dark> mdi-minus </v-icon> </v-btn>
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -12,6 +14,7 @@
         />
 
         <span>吃什麼</span>
+        <!-- <v-divider vertical color="black"></v-divider> -->
       </div>
 
       <!-- <v-spacer></v-spacer>

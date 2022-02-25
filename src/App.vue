@@ -3,6 +3,7 @@
     <!-- app color="primary" dark -->
     <v-app-bar app color="blue" elevation="4">
       <div class="d-flex align-center">
+        <!-- 圓形burger按鈕 點擊有下拉選單-->
         <v-btn color="primary"> <v-icon dark> mdi-minus </v-icon> </v-btn>
         <v-img
           alt="Vuetify Logo"

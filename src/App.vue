@@ -2,9 +2,8 @@
   <v-app>
     <!-- app color="primary" dark -->
     <v-app-bar app color="blue" elevation="4">
+      <v-app-bar-nav-icon @click="nav = true"> </v-app-bar-nav-icon>
       <div class="d-flex align-center">
-        <!-- 圓形burger按鈕 點擊有下拉選單-->
-        <v-btn color="primary"> <v-icon dark> mdi-minus </v-icon> </v-btn>
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -15,20 +14,19 @@
         />
 
         <span>吃什麼</span>
-        <!-- <v-divider vertical color="black"></v-divider> -->
       </div>
-
-      <!-- <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn> -->
     </v-app-bar>
+
+    <!-- Add a navigation bar -->
+    <v-navigation-drawer v-model="nav" absolute temporary>
+      <v-list>
+        <v-list-item-group>
+          <v-list-item v-for="(item, i) in listItems" :key="i">{{
+            item
+          }}</v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
 
     <v-main>
       <router-view />
@@ -39,9 +37,12 @@
 <script>
 export default {
   name: "App",
-
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      listItems: ["1", "2", "3"],
+      nav: false,
+    };
+  },
+  methods: {},
 };
 </script>
